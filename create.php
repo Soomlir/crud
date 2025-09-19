@@ -9,6 +9,12 @@
 </head>
 
 <body>
+  <?php if (isset($_GET['error'])): ?>
+    <div class="error-message">
+      Error: <?php echo htmlspecialchars($_GET['error']); ?>
+    </div>
+  <?php endif; ?>
+
   <div class="container">
     <div class="header-actions">
       <h2>Add New Client</h2>
@@ -55,6 +61,11 @@
       </form>
     </div>
   </div>
+
+  <?php if (isset($_GET['success'])): ?>
+    <div class="success-message">
+    </div>
+  <?php endif; ?>
 </body>
 
 </html>

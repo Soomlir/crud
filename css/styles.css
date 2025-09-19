@@ -59,6 +59,10 @@ tr:hover {
 	background-color: #f8f9fa;
 }
 
+a {
+	text-decoration: none;
+}
+
 .header-actions {
 	display: flex;
 	justify-content: space-between;
@@ -77,10 +81,19 @@ tr:hover {
 	transition: all 0.3s;
 }
 
+.controls {
+	display: flex;
+	gap: 10px;
+}
+
 .edit-link {
+	display: block;
+	padding: 3px 5px;
 	color: #fff;
 	background-color: #17a2b8;
 	border: 1px solid #17a2b8;
+	text-decoration: none;
+	text-align: center;
 }
 
 .edit-link:hover {
@@ -89,9 +102,12 @@ tr:hover {
 }
 
 .delete-link {
+	display: block;
+	padding: 3px 5px;
 	color: #fff;
 	background-color: #dc3545;
 	border: 1px solid #dc3545;
+	text-align: center;
 }
 
 .delete-link:hover {
@@ -169,4 +185,40 @@ tr:hover {
 .pagination .disabled {
 	color: #ddd;
 	cursor: not-allowed;
+}
+
+.error-message {
+	background-color: #ffebee;
+	color: #c62828;
+	padding: 15px;
+	margin: 20px;
+	border-radius: 5px;
+	text-align: center;
+}
+
+.success-message {
+	background-color: #e8f5e9;
+	color: #2e7d32;
+	padding: 15px;
+	margin: 20px;
+	border-radius: 5px;
+	text-align: center;
+}
+
+.error-message {
+	background-color: #ffebee;
+	color: #c62828;
+	padding: 15px;
+	margin: 20px;
+	border-radius: 5px;
+	text-align: center;
+}
+
+.success-message {
+	background-color: #e8f5e9;
+	color: #2e7d32;
+	padding: 15px;
+	margin: 20px;
+	border-radius: 5px;
+	text-align: center;
 }

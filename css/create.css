@@ -143,6 +143,24 @@ body {
 	transform: translateY(-2px);
 }
 
+.error-message {
+	background-color: #ffebee;
+	color: #c62828;
+	padding: 15px;
+	margin: 20px;
+	border-radius: 5px;
+	text-align: center;
+}
+
+.success-message {
+	background-color: #e8f5e9;
+	color: #2e7d32;
+	padding: 15px;
+	margin: 20px;
+	border-radius: 5px;
+	text-align: center;
+}
+
 @media (max-width: 768px) {
 	.form-row {
 		flex-direction: column;

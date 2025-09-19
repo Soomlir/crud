@@ -40,6 +40,27 @@ $users = $posts->getPaginated($offset, $records_per_page);
       <a href="create.php" class="create-button">Create New Record</a>
     </div>
 
+    <?php
+    if (isset($_GET['success'])): ?>
+      <div class="success-message">
+        <?php echo htmlspecialchars($_GET['success']); ?>
+      </div>
+    <?php endif; ?>
+
+
+    <?php if (isset($_GET['success'])): ?>
+      <div class="success-message">
+        Client updated successfully!
+      </div>
+    <?php endif; ?>
+
+
+    <?php if (isset($_GET['error'])): ?>
+      <div class="error-message">
+        Error: <?php echo htmlspecialchars($_GET['error']); ?>
+      </div>
+    <?php endif; ?>
+
     <div class="table-container">
       <table>
         <thead>
@@ -63,9 +84,9 @@ $users = $posts->getPaginated($offset, $records_per_page);
                 <td><?php echo htmlspecialchars($user['phone']); ?></td>
                 <td><?php echo htmlspecialchars($user['email']); ?></td>
                 <td><?php echo htmlspecialchars($user['address']); ?></td>
-                <td class="action-links">
-                  <a href="/edit.php" class="edit-link">Edit</a>
-                  <a href="#" class="delete-link">Delete</a>
+                <td class="controls">
+                  <a class="edit-link" href="edit.php?id=<?php echo $user['id']; ?>">Edit</a>
+                  <a class="delete-link" href="delete.php?id=<?php echo $user['id']; ?>" onclick="return confirm('Are you sure?')">Delete</a>
                 </td>
               </tr>
             <?php endforeach; ?>
