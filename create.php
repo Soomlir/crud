@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,11 +64,6 @@
       </form>
     </div>
   </div>
-
-  <?php if (isset($_GET['success'])): ?>
-    <div class="success-message">
-    </div>
-  <?php endif; ?>
 </body>
 
 </html>

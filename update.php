@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once 'classes/Post.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -20,8 +21,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $post = new Post();
   $result = $post->edit($id, $data);
 
-  if ($result === true) {
-    header('Location: index.php?success=1');
+  if ($result) {
+    $_SESSION['success'] = 'The client has been successfully updated';
+    header('Location: index.php');
     exit();
   } else {
     header('Location: edit.php?id=' . $id . '&error=' . urlencode($result));

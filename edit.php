@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once 'classes/Post.php';
 
 $id = $_GET['id'] ?? null;

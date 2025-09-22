@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once __DIR__ . '/classes/Post.php';
 
 $posts = new Post();
@@ -40,17 +41,10 @@ $users = $posts->getPaginated($offset, $records_per_page);
       <a href="create.php" class="create-button">Create New Record</a>
     </div>
 
-    <?php
-    if (isset($_GET['success'])): ?>
+    <?php if (isset($_SESSION['success'])): ?>
       <div class="success-message">
-        <?php echo htmlspecialchars($_GET['success']); ?>
-      </div>
-    <?php endif; ?>
-
-
-    <?php if (isset($_GET['success'])): ?>
-      <div class="success-message">
-        Client updated successfully!
+        <?php echo $_SESSION['success'];
+        unset($_SESSION['success']); ?>
       </div>
     <?php endif; ?>
 

@@ -72,7 +72,6 @@ class Post
       $email = $data['email'];
       $address = $data['address'] ?? null;
 
-      // Bind parameters
       $stmt->bindParam(':name', $name);
       $stmt->bindParam(':lastname', $lastname);
       $stmt->bindParam(':phone', $phone);
